@@ -1,7 +1,13 @@
 # InteractivePSMenu
+## Description
 Generates a dynamic console menu featuring a list of options, allowing users to navigate and select choices using their keyboard arrows.
 
-## Description
+![Show-Menu](Show-Menu.png)
+
+<br><br>
+
+
+## Documentation
 `title  :` **[string/optional]**
 <br>
 	Title for the menu.
@@ -38,6 +44,8 @@ Generates a dynamic console menu featuring a list of options, allowing users to 
 <br>
  Defaults: `0`
 
+<br>
+
 ## Usage
 ``` powershell
 # This example shows how to use the Show-Menu function to display a menu with a custom title and three options.
@@ -49,4 +57,3 @@ $choice = show-menu -title "Main Menu" -caption "Select an option." -default 2 -
 
 write-host "`nYou chose: $choice`n`n"
 ```
-![Show-Menu](Show-Menu.png)

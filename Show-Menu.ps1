@@ -79,10 +79,10 @@ function Show-Menu {
 			$default = $default
 		}
 
-		write-host "$([char]27)[1m$title$([char]27)[0m"
+		write-host $title -foregroundcolor white
 
 		if ( $caption -ne "" ) {
-			write-host "$([char]27)[1;30m$caption$([char]27)[0m"
+			write-host $caption -foregroundcolor darkgray
 		}
 
 		# Create space for the menu
@@ -109,11 +109,11 @@ function Show-Menu {
 					write-host "$yselect $( $choices[ $index ] )" -nonewline
 
 					if ( $keyinfo.virtualkeycode -eq 13 -and $index -eq $selected ) {
-						write-host " $([char]27)[0;32mSelected$([char]27)[0m" -nonewline
+						write-host " Selected" -foregroundcolor green -nonewline
 						$finally = $true
 					}
 					if ( $index -eq $default ) {
-						write-host " $([char]27)[1;30mDefault$([char]27)[0m" -nonewline
+						write-host " Default" -foregroundcolor yellow -nonewline
 					}
 				}
 
@@ -121,7 +121,7 @@ function Show-Menu {
 					write-host "$nselect $( $choices[ $index ] )" -nonewline
 
 					if ( $index -eq $default ) {
-						write-host " $([char]27)[1;30mDefault$([char]27)[0m" -nonewline
+						write-host " Default" -foregroundcolor yellow -nonewline
 					}
 				}
 
